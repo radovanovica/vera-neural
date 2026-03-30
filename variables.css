@@ -1,0 +1,142 @@
+/* ============================================
+   CSS VARIABLES - Safe Area Insets & Theme
+   ============================================ */
+:root {
+  --sat: env(safe-area-inset-top);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+  --sar: env(safe-area-inset-right);
+  
+  /* Light Theme - Warm Off-White */
+  --bg-primary: #faf8f6;
+  --bg-secondary: #f0ece8;
+  --container-bg: transparent;
+  --message-bg: #f0ece8;
+  --user-message-bg: linear-gradient(135deg, #d8d0e4 0%, #cdd5e0 100%);
+  --input-bg: rgba(43, 40, 56, 0.06);
+  
+  --text-primary: #2b2838;
+  --text-secondary: #3d3548;
+  --text-soft: #4a4558;
+  --text-placeholder: #6b6580;
+  --text-muted: rgba(43, 40, 56, 0.6);
+  
+  --border-color: rgba(43, 40, 56, 0.08);
+  
+  --vera-purple: #9b8ec4;
+  --vera-purple-dark: #7B9AB5;
+  --vera-bg: #2d3142;
+  --vera-bg-light: #363b50;
+  
+  /* Status Colors - Muted for regulation */
+  --vera-success: #7dba8e;
+  --vera-warning: #d4a96a;
+  --vera-error: #c4797a;
+  --vera-info: #7B9AB5;
+  
+  /* VDS Colors - Dark Luxury Theme */
+  --vds-gold: #c9a962;
+  --vds-noir: #0a0a0a;
+  --vds-pearl: #f8f6f1;
+  --vds-terracotta: #b8845b;
+  --vds-sage: #a8b5a0;
+  --vds-taupe: #c4a484;
+  --vds-mauve: #d4a5a5;
+  --vds-lavender: #b8a9c9;
+  
+  --orb-1: #9b8ec4;
+  --orb-2: #7B9AB5;
+  --orb-3: #8a9cb5;
+  --button-bg: rgba(123, 154, 181, 0.12);
+  --button-text: #2b2838;
+  --button-border: rgba(123, 154, 181, 0.25);
+  
+  --header-bg: rgba(250, 248, 246, 0.85);
+  --sidebar-bg: #ffffff;
+
+  /* VERA semantic UI tokens */
+  --vera-surface-0: #ffffff;
+  --vera-surface-1: #f7f3ee;
+  --vera-surface-2: #efe8df;
+  --vera-surface-overlay: rgba(255, 255, 255, 0.72);
+
+  --vera-ink-primary: #2b2838;
+  --vera-ink-secondary: #4a4558;
+  --vera-ink-muted: #6b6580;
+
+  --vera-accent: #7b9ab5;
+  --vera-accent-soft: rgba(123, 154, 181, 0.14);
+  --vera-focus: rgba(123, 154, 181, 0.44);
+  --vera-boundary: rgba(43, 40, 56, 0.12);
+
+  --vera-radius-sm: 8px;
+  --vera-radius-md: 12px;
+  --vera-radius-lg: 16px;
+
+  --vera-space-1: 4px;
+  --vera-space-2: 8px;
+  --vera-space-3: 12px;
+  --vera-space-4: 16px;
+  --vera-space-5: 20px;
+  --vera-space-6: 24px;
+
+  --vera-font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vera-font-voice: 'Crimson Pro', Georgia, serif;
+  --vera-font-mono: 'Fira Code', Menlo, Consolas, monospace;
+
+  --vera-type-title: clamp(1.02rem, 1.45vw, 1.22rem);
+  --vera-type-section: clamp(0.92rem, 1.1vw, 1rem);
+  --vera-type-body: clamp(0.94rem, 1.05vw, 1rem);
+  --vera-type-meta: 0.78rem;
+}
+
+/* Dark Theme - Twilight Cocoon */
+[data-theme="dark"] {
+  --bg-primary: #2b2838;
+  --bg-secondary: #352e45;
+  --container-bg: transparent;
+  --message-bg: #352e45;
+  --user-message-bg: linear-gradient(135deg, #352e45 0%, #3d3558 100%);
+  --input-bg: rgba(248, 246, 243, 0.06);
+  
+  --text-primary: #F8F6F3;
+  --text-secondary: rgba(248, 246, 243, 0.7);
+  --text-soft: rgba(248, 246, 243, 0.45);
+  --text-muted: rgba(248, 246, 243, 0.5);
+  
+  --border-color: rgba(248, 246, 243, 0.08);
+  
+  --vera-purple: #9b8ec4;
+  --vera-purple-dark: #7B9AB5;
+  
+  --orb-1: #9b8ec4;
+  --orb-2: #7B9AB5;
+  --orb-3: #8a9cb5;
+  --button-bg: #7B9AB5;
+  --button-text: #F8F6F3;
+  
+  --header-bg: rgba(43, 40, 56, 0.85);
+  --sidebar-bg: #1e1a2e;
+  --breath-circle: radial-gradient(circle, rgba(53, 46, 69, 0.25), transparent 70%);
+
+  --vera-surface-0: #262235;
+  --vera-surface-1: #302a42;
+  --vera-surface-2: #3a3250;
+  --vera-surface-overlay: rgba(43, 40, 56, 0.7);
+
+  --vera-ink-primary: #f8f6f3;
+  --vera-ink-secondary: rgba(248, 246, 243, 0.8);
+  --vera-ink-muted: rgba(248, 246, 243, 0.62);
+
+  --vera-accent: #9bb3c8;
+  --vera-accent-soft: rgba(155, 179, 200, 0.16);
+  --vera-focus: rgba(155, 179, 200, 0.5);
+  --vera-boundary: rgba(248, 246, 243, 0.14);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}

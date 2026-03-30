@@ -1,0 +1,14 @@
+/* ============================================
+   VERA Landing Page Styles - Modular Architecture
+   Main CSS Module File (Imports Only)
+   ============================================ */
+
+/* Import all modular CSS files */
+@import "./landing-variables.module.css";
+@import "./landing-layout.module.css";
+@import "./landing-navigation.module.css";
+@import "./landing-buttons.module.css";
+@import "./landing-hero.module.css";
+@import "./landing-components.module.css";
+@import "./landing-footer.module.css";
+@import "./landing-responsive.module.css";

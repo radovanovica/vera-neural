@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" role="img" aria-labelledby="title desc">
+  <title id="title">Anthropic</title>
+  <desc id="desc">Wordmark badge for Anthropic</desc>
+  <rect x="1" y="1" width="178" height="46" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="90" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" letter-spacing="1.1">ANTHROPIC</text>
+</svg>

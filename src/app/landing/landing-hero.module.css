@@ -1,0 +1,110 @@
+/* ============================================
+   VERA Landing Page - Hero Section & Orb
+   Module 5 of 8
+   ============================================ */
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 5rem;
+  position: relative;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 640px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTagline {
+  color: var(--text-dim);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.heroTitle {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.18;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.heroActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.heroTrust {
+  color: var(--green);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.heroSecondaryActions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   VERA Orb
+   ============================================ */
+.orbContainer {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orbRing {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(139, 120, 255, 0.25);
+  animation: pulseRing 5s ease-in-out infinite;
+}
+
+.orb {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%,
+    rgba(210, 190, 255, 0.95) 0%,
+    rgba(139, 120, 255, 0.8) 30%,
+    rgba(100, 70, 180, 0.55) 65%,
+    transparent 85%);
+  box-shadow: 0 0 60px rgba(139, 120, 255, 0.5), 0 0 120px rgba(100, 70, 180, 0.25);
+  animation: breathe 5s ease-in-out infinite;
+}
+
+.orbSmall {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(210, 190, 255, 0.9), rgba(139, 120, 255, 0.7));
+  box-shadow: 0 0 40px rgba(139, 120, 255, 0.4);
+  margin: 0 auto 2rem;
+  animation: breathe 5s ease-in-out infinite;
+}

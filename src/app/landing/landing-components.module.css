@@ -1,0 +1,178 @@
+/* ============================================
+   VERA Landing Page - Components (Cards, Testimonials, Pricing)
+   Module 6 of 8
+   ============================================ */
+
+/* ============================================
+   Cards
+   ============================================ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(139, 120, 255, 0.45);
+  transform: translateY(-3px);
+}
+
+.cardGreen {
+  border-color: rgba(74, 222, 128, 0.2);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+.cardIconLarge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #c4b5fd, #8B78FF);
+  box-shadow: 0 0 16px rgba(139, 120, 255, 0.4);
+  margin: 0 auto 1rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.cardTitlePurple {
+  color: var(--purple);
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.cardResponse {
+  color: var(--purple);
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Price Cards
+   ============================================ */
+.priceCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem 2rem 2.5rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.priceCard:hover {
+  transform: translateY(-4px);
+}
+
+.priceCardFeatured {
+  border: 2px solid var(--purple);
+  background: rgba(139, 120, 255, 0.08);
+  position: relative;
+}
+
+.priceCardBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7c6bd6;
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.priceCardTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.priceCardSubtitle {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.priceCardDesc {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.pricingCancel {
+  text-align: center;
+  color: #ef4444;
+  font-weight: 600;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   Testimonials
+   ============================================ */
+.testimonial {
+  border-left: 3px solid var(--purple);
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1rem;
+  background: rgba(20, 20, 40, 0.6);
+}
+
+.testimonialGreen {
+  border-left-color: var(--green);
+}
+
+.testimonialText {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.testimonialAuthor {
+  font-size: 0.88rem;
+}
+
+.testimonialAuthorPurple {
+  color: var(--purple);
+}
+
+.testimonialAuthorGreen {
+  color: var(--green);
+}
+
+.testimonialHero {
+  background: rgba(26, 26, 46, 0.8);
+  border-left: 4px solid var(--purple);
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+}
+
+.testimonialHeroText {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}

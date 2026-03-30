@@ -1,0 +1,76 @@
+/* ============================================
+   VERA Landing Page - Navigation
+   Module 3 of 8
+   ============================================ */
+
+/* ============================================
+   Navigation
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(14, 14, 26, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139, 120, 255, 0.1);
+}
+
+.navLogo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.navActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+/* ============================================
+   Floating CTA
+   ============================================ */
+.floatingCta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+
+/* ============================================
+   Mobile Navigation Adjustments
+   ============================================ */
+@media (max-width: 768px) {
+  .nav {
+    padding: 12px 16px;
+  }
+
+  .navActions {
+    gap: 8px;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+
+  .floatingCta {
+    bottom: 16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,132 @@
+/* ============================================
+   BASE RESET
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+}
+
+/* Prevent flash of light background on load */
+html, body {
+  background-color: #2b2838 !important;
+}
+
+/* This gets overridden by theme after JS loads, but prevents the flash */
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2b2838;
+  z-index: -1;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #faf8f6 0%, #ffffff 50%, #faf8f6 100%) !important;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  letter-spacing: 0.015em;
+  line-height: 1.7;
+  font-size: 1rem;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(135deg, #2b2838 0%, #352e45 50%, #2b2838 100%) !important;
+  background-attachment: fixed;
+}
+
+/* Force light mode when no data-theme or explicitly light */
+body:not([data-theme="dark"]) {
+  background: linear-gradient(135deg, #faf8f6 0%, #ffffff 50%, #faf8f6 100%) !important;
+  background-attachment: fixed;
+  color: #2b2838;
+}
+
+/* Global scroll fix for Next.js + Chrome */
+#__next,
+main {
+  overflow: visible;
+  height: auto;
+}
+
+/* Global safe-area padding for PWA/standalone (iOS) */
+html, body {
+  padding-top: var(--sat);
+  padding-left: var(--sal);
+  padding-right: var(--sar);
+  padding-bottom: var(--sab);
+}
+
+/* Horizontal rules - completely hidden */
+hr {
+  display: none !important;
+  border: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(155, 142, 196, 0.25);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(155, 142, 196, 0.25);
+  color: inherit;
+}
+
+/* Placeholder text */
+::placeholder {
+  color: var(--text-soft);
+  opacity: 1;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: var(--text-soft);
+  opacity: 1;
+}

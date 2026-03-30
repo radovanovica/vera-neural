@@ -1,0 +1,95 @@
+/* ============================================
+   MAIN SCROLL CONTAINER (App Shell)
+   ============================================ */
+.vera-main-scroll {
+  position: fixed;
+  top: var(--sat);
+  left: var(--sal);
+  right: var(--sar);
+  bottom: var(--sab);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================
+   RESPONSIVE CONTAINERS & GRID
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+/* ============================================
+   SAFE AREA UTILITIES
+   ============================================ */
+.safe-area-top {
+  padding-top: max(16px, env(safe-area-inset-top));
+}
+
+.safe-area-bottom {
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+}
+
+.safe-area-left {
+  padding-left: max(16px, env(safe-area-inset-left));
+}
+
+.safe-area-right {
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+.safe-area-all {
+  padding-top: max(16px, env(safe-area-inset-top));
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+/* Pattern Detection Styles */
+.live-patterns-section {
+  padding: 0 16px;
+  margin-bottom: 20px;
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 768px) {
+  .vera-main-scroll {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+  }
+  
+  .container { 
+    padding: 0 24px; 
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container { 
+    padding: 0 32px; 
+  }
+  
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,93 @@
+/* ============================================
+   VERA Landing Page - Buttons
+   Module 4 of 8
+   ============================================ */
+
+/* ============================================
+   Buttons
+   ============================================ */
+.pillBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.pillBtnPrimary {
+  background: linear-gradient(135deg, #8B78FF 0%, #a78bfa 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(139, 120, 255, 0.4);
+}
+
+.pillBtnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 36px rgba(139, 120, 255, 0.6);
+}
+
+.pillBtnOutline {
+  border: 1.5px solid rgba(139, 120, 255, 0.5);
+  color: #a78bfa;
+  background: rgba(139, 120, 255, 0.15);
+}
+
+.pillBtnOutline:hover {
+  border-color: var(--purple);
+  background: rgba(139, 120, 255, 0.25);
+}
+
+.pillBtnGreen {
+  border: 1.5px solid rgba(74, 222, 128, 0.4);
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.pillBtnGreen:hover {
+  border-color: var(--green);
+  background: rgba(74, 222, 128, 0.2);
+}
+
+.pillBtnSmall {
+  padding: 10px 24px;
+  font-size: 0.9rem;
+}
+
+.pillBtnTiny {
+  padding: 8px 20px;
+  font-size: 0.88rem;
+}
+
+/* ============================================
+   Crisis Buttons
+   ============================================ */
+.crisisBtn {
+  padding: 10px 22px;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.crisisBtnRed {
+  background: #dc2626;
+}
+
+.crisisBtnPurple {
+  background: #7c6bd6;
+}
+
+/* ============================================
+   Responsive Button Adjustments
+   ============================================ */
+@media (max-width: 768px) {
+  .pillBtnSmall {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}

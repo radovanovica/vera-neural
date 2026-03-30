@@ -1,0 +1,130 @@
+/* ============================================
+   iOS INPUT FIXES
+   ============================================ */
+
+/* Prevent iOS zoom on input focus - must be 16px+ */
+input,
+textarea,
+select {
+  font-size: 16px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* ============================================
+   BUTTON STYLING
+   ============================================ */
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(123, 154, 181, 0.2);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   FOCUS STYLES - Accessibility
+   ============================================ */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--orb-1);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(155, 142, 196, 0.15);
+}
+
+:focus-visible {
+  outline: 2px solid var(--vera-purple);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--orb-1);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   TOUCH-FRIENDLY TARGETS (44x44px minimum)
+   ============================================ */
+button,
+[role="button"],
+a,
+input[type="submit"],
+input[type="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ============================================
+   ACCESSIBILITY UTILITIES
+   ============================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus,
+.sr-only:focus-visible,
+.focus\:not-sr-only:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ============================================
+   COMPONENT UTILITY CLASSES
+   ============================================ */
+.analyzing-indicator {
+  animation: softPulse 2s infinite ease-in-out;
+}
+
+.pattern-card {
+  animation: slideInPattern 0.5s ease-out;
+}
