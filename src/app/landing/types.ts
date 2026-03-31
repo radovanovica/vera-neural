@@ -14,18 +14,23 @@ export interface StepItem {
 export interface TestimonialItem {
   text: string;
   author: string;
+  role: string;
+  timeAgo: string;
+  rating: number;
   green?: boolean;
 }
 
 export interface ScienceCard {
   title: string;
   desc: string;
+  icon: string;
 }
 
 export interface PricingCard {
   title: string;
-  subtitle: string;
-  description: string;
+  price: string;
+  period: string;
+  features: string[];
   cta: string;
   href: string;
   variant: 'outline' | 'primary';

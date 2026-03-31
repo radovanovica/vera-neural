@@ -2,18 +2,28 @@ import type { PricingCard } from '../types';
 
 export const PRICING_CARDS: PricingCard[] = [
   {
-    title: 'Free',
-    subtitle: 'Always Free to Start',
-    description: 'Talk to VERA anytime. No credit card required.',
-    cta: 'Start Free ->',
+    title: 'VERA Free Plan',
+    price: '$0',
+    period: '/Monthly',
+    features: [
+      'Full AI VERA access you can chat with',
+      'Talk to VERA anytime. No credit card required.',
+    ],
+    cta: 'Start Free',
     href: '/sign-up',
     variant: 'outline',
   },
   {
-    title: 'VERA Pro — $12.99/month',
-    subtitle: 'All Features',
-    description: 'Clinical skills, practice tools, pattern insights, progress tracking, and priority support',
-    cta: 'Upgrade to Premium ->',
+    title: 'VERA Premium',
+    price: '$12.99',
+    period: '/Monthly',
+    features: [
+      'Clinical skills',
+      'Practice tools',
+      'Pattern insights',
+      'Progress tracking',
+    ],
+    cta: 'Start Free Trial',
     href: '/upgrade',
     variant: 'primary',
     featured: true,

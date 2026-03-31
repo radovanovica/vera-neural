@@ -8,8 +8,8 @@ export function LandingFloatingCTA(): React.JSX.Element {
     <div className={styles.floatingCta}>
       <Link
         href="/sign-up"
-        className={`${styles.pillBtn} ${styles.pillBtnPrimary}`}
-        style={{ boxShadow: '0 4px 24px rgba(139,120,255,0.5)' }}
+        className={`${styles.pillBtn} ${styles.pillBtnPrimary} ${styles.pillBtnSmall}`}
+        style={{ boxShadow: '0 4px 24px rgba(139,92,246,0.5)' }}
       >
         <span className={styles.liveDot} />
         Start Free

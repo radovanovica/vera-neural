@@ -4,7 +4,7 @@ import styles from '../landing.module.css';
 
 export function LandingDemoVideo(): React.JSX.Element {
   return (
-    <section className={`${styles.section} ${styles.sectionAlt} ${styles.sectionCompact}`}>
+    <section className={`${styles.section} ${styles.sectionCompact}`}>
       <div className={`${styles.containerSm} ${styles.textCenter}`}>
         <p className={styles.sectionLabel}>See VERA</p>
         <h2 className={`${styles.sectionTitle} ${styles.mb1}`}>

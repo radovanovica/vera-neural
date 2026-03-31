@@ -1,126 +1,83 @@
 /* ============================================
    VERA Landing Page - Variables & Animations
-   Module 1 of 8
+   Redesigned to match Figma
    ============================================ */
 
-/* ============================================
-   CSS Variables
-   ============================================ */
 :root {
-  --purple: #8B78FF;
-  --purple-soft: rgba(139, 120, 255, 0.12);
-  --purple-glow: rgba(139, 120, 255, 0.3);
+  --purple: #8B5CF6;
+  --purple-light: #A78BFA;
+  --purple-soft: rgba(139, 92, 246, 0.12);
+  --purple-glow: rgba(139, 92, 246, 0.35);
   --green: #4ade80;
   --green-soft: rgba(74, 222, 128, 0.12);
-  --text-muted: rgba(187, 162, 255, 0.8);
-  --text-dim: rgba(187, 162, 255, 0.7);
-  --surface: rgba(30, 30, 58, 0.5);
-  --border: rgba(139, 120, 255, 0.2);
-  --landing-bg: #0e0e1a;
-  --landing-bg-alt: #12121f;
-  --footer-bg: #0a0a14;
+
+  --landing-bg: #0B0B1A;
+  --landing-bg-alt: #0F0F22;
+  --surface: rgba(22, 22, 48, 0.7);
+  --surface-elevated: rgba(30, 30, 60, 0.6);
+  --footer-bg: #08080F;
+
+  --text-primary: #FFFFFF;
+  --text-muted: rgba(200, 190, 255, 0.75);
+  --text-dim: rgba(160, 150, 200, 0.6);
+
+  --border: rgba(139, 92, 246, 0.2);
+  --border-light: rgba(139, 92, 246, 0.1);
 }
 
-/* ============================================
-   Animations
-   ============================================ */
+/* Animations */
 @keyframes breathe {
   0%, 100% { transform: scale(1); opacity: 0.85; }
   50% { transform: scale(1.07); opacity: 1; }
 }
-
 @keyframes pulseRing {
   0%, 100% { transform: scale(0.95); opacity: 0.4; }
   50% { transform: scale(1.05); opacity: 0.15; }
 }
-
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
-
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px var(--purple-glow); }
-  50% { box-shadow: 0 0 40px rgba(139, 120, 255, 0.5); }
-}
-
 @keyframes dotPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 
-/* ============================================
-   Fade Animation Classes
-   ============================================ */
-.fadeUp {
-  animation: fadeUp 0.8s ease-out forwards;
-}
+.fadeUp  { animation: fadeUp 0.8s ease-out forwards; }
+.fadeUp1 { animation: fadeUp 0.8s ease-out 0.1s both; }
+.fadeUp2 { animation: fadeUp 0.8s ease-out 0.25s both; }
+.fadeUp3 { animation: fadeUp 0.8s ease-out 0.4s both; }
+.fadeUp4 { animation: fadeUp 0.8s ease-out 0.55s both; }
 
-.fadeUp1 {
-  animation: fadeUp 0.8s ease-out 0.1s both;
-}
-
-.fadeUp2 {
-  animation: fadeUp 0.8s ease-out 0.25s both;
-}
-
-.fadeUp3 {
-  animation: fadeUp 0.8s ease-out 0.4s both;
-}
-
-.fadeUp4 {
-  animation: fadeUp 0.8s ease-out 0.55s both;
-}
-
-/* ============================================
-   Utility Classes
-   ============================================ */
 .liveDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 8px; height: 8px; border-radius: 50%;
   background: var(--green);
   animation: dotPulse 2s ease-in-out infinite;
-  display: inline-block;
-  margin-right: 6px;
+  display: inline-block; margin-right: 6px;
 }
-
 .gradientText {
-  background: linear-gradient(135deg, #8B78FF 0%, #c4b5fd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #c4b5fd 0%, #fff 50%, #a78bfa 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
 .ambient {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  pointer-events: none;
+  position: absolute; border-radius: 50%;
+  filter: blur(120px); pointer-events: none;
 }
-
 .dividerLine {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(139, 120, 255, 0.2), transparent);
-  margin: 0 auto;
-  max-width: 800px;
+  background: linear-gradient(to right, transparent, rgba(139,92,246,0.15), transparent);
+  margin: 0 auto; max-width: 900px;
 }
-
-/* ============================================
-   Text & Spacing Utilities
-   ============================================ */
-.textCenter {
-  text-align: center;
-}
-
+.textCenter { text-align: center; }
 .mt1 { margin-top: 1rem; }
 .mt2 { margin-top: 2rem; }
 .mt3 { margin-top: 3rem; }
 .mb1 { margin-bottom: 1rem; }
 .mb2 { margin-bottom: 2rem; }
 .mb3 { margin-bottom: 3rem; }
+.hideMobile { display: inline; }

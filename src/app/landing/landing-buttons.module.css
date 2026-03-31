@@ -1,93 +1,68 @@
 /* ============================================
    VERA Landing Page - Buttons
-   Module 4 of 8
+   Redesigned to match Figma
    ============================================ */
 
-/* ============================================
-   Buttons
-   ============================================ */
 .pillBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 36px;
-  border-radius: 50px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  cursor: pointer;
-  border: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: 10px;
+  font-size: 1rem; font-weight: 600;
+  text-decoration: none; transition: all 0.25s ease;
+  cursor: pointer; border: none; white-space: nowrap;
 }
-
 .pillBtnPrimary {
-  background: linear-gradient(135deg, #8B78FF 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
   color: #fff;
-  box-shadow: 0 4px 24px rgba(139, 120, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(139,92,246,0.4);
 }
-
 .pillBtnPrimary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 36px rgba(139, 120, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(139,92,246,0.55);
 }
-
 .pillBtnOutline {
-  border: 1.5px solid rgba(139, 120, 255, 0.5);
-  color: #a78bfa;
-  background: rgba(139, 120, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  font-family: 'Inter', sans-serif;
 }
-
 .pillBtnOutline:hover {
-  border-color: var(--purple);
-  background: rgba(139, 120, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
 }
-
 .pillBtnGreen {
-  border: 1.5px solid rgba(74, 222, 128, 0.4);
-  color: var(--green);
-  background: var(--green-soft);
+  border: 1.5px solid rgba(74,222,128,0.4);
+  color: var(--green); background: var(--green-soft);
 }
-
 .pillBtnGreen:hover {
-  border-color: var(--green);
-  background: rgba(74, 222, 128, 0.2);
+  border-color: var(--green); background: rgba(74,222,128,0.2);
 }
+.pillBtnSmall { padding: 10px 22px; font-size: 0.9rem; }
+.pillBtnTiny  { padding: 8px 18px; font-size: 0.85rem; }
 
-.pillBtnSmall {
-  padding: 10px 24px;
-  font-size: 0.9rem;
-}
-
-.pillBtnTiny {
-  padding: 8px 20px;
-  font-size: 0.88rem;
-}
-
-/* ============================================
-   Crisis Buttons
-   ============================================ */
-.crisisBtn {
-  padding: 10px 22px;
+/* Dark filled button */
+.pillBtnDark {
+  background: rgba(15, 12, 40, 0.75);
+  border: 1.5px solid rgba(120, 100, 200, 0.35);
   color: #fff;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(8px);
+}
+.pillBtnDark:hover {
+  background: rgba(25, 20, 60, 0.9);
+  border-color: rgba(139, 92, 246, 0.55);
 }
 
-.crisisBtnRed {
-  background: #dc2626;
+/* Crisis Buttons */
+.crisisBtn {
+  padding: 10px 22px; color: #fff; border-radius: 50px;
+  text-decoration: none; font-weight: 600; font-size: 0.9rem;
+  display: inline-flex; align-items: center; gap: 6px;
 }
+.crisisBtnRed { background: #dc2626; }
+.crisisBtnRed:hover { background: #ef4444; }
+.crisisBtnPurple { background: #7C3AED; }
+.crisisBtnPurple:hover { background: #8B5CF6; }
 
-.crisisBtnPurple {
-  background: #7c6bd6;
-}
-
-/* ============================================
-   Responsive Button Adjustments
-   ============================================ */
 @media (max-width: 768px) {
-  .pillBtnSmall {
-    padding: 8px 16px;
-    font-size: 0.85rem;
-  }
+  .pillBtnSmall { padding: 8px 16px; font-size: 0.85rem; }
 }

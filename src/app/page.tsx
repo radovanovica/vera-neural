@@ -3,7 +3,6 @@
 import React from 'react';
 
 import { LandingDivider } from './landing/components/LandingDivider';
-import { LandingDemoVideo } from './landing/components/LandingDemoVideo';
 import { LandingFinalCTA } from './landing/components/LandingFinalCTA';
 import { LandingFloatingCTA } from './landing/components/LandingFloatingCTA';
 import { LandingFooter } from './landing/components/LandingFooter';
@@ -16,15 +15,12 @@ import { LandingShell } from './landing/components/LandingShell';
 import { LandingTestimonialHero } from './landing/components/LandingTestimonialHero';
 import { LandingTestimonials } from './landing/components/LandingTestimonials';
 import { LandingTherapists } from './landing/components/LandingTherapists';
-import TechBadges from '@/components/landing/TechBadges';
 
 export default function LandingPage(): React.JSX.Element {
   return (
     <LandingShell>
       <LandingNav />
       <LandingHero />
-      <TechBadges />
-      <LandingDemoVideo />
       <LandingTestimonialHero />
       <LandingDivider />
       <LandingIndividuals />

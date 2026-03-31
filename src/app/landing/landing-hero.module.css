@@ -1,110 +1,390 @@
 /* ============================================
-   VERA Landing Page - Hero Section & Orb
-   Module 5 of 8
+   VERA Landing Page - Hero Section
+   Redesigned to match Figma
    ============================================ */
 
-/* ============================================
-   Hero Section
-   ============================================ */
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 8rem 2rem 5rem;
+  padding: 8rem 2rem 0;
   position: relative;
   text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(60, 40, 160, 0.72) 0%, transparent 65%),
+    linear-gradient(to bottom,
+      rgba(18, 12, 55, 0.82) 0%,
+      rgba(14, 10, 42, 0.70) 35%,
+      rgba(10, 8, 30, 0.55) 60%,
+      rgba(8, 6, 22, 0.85) 85%,
+      rgba(6, 4, 18, 0.98) 100%
+    ),
+    #0a0820;
+}
+
+/* Ellipse SVG overlay — absolute, centered bottom half */
+.heroEllipse {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+}
+
+/* Extra bottom padding to make room for the absolute phones image */
+.heroInner {
+  padding-bottom: 520px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heroContent {
-  max-width: 640px;
+  max-width: 680px;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Absolutely positioned phones image */
+.heroPhones {
+z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 560px;
+    display: flex;
+    position: relative;
+}
+
+.heroPhonesImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Tagline pill */
 .heroTagline {
-  color: var(--text-dim);
-  font-size: 1rem;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  padding: 8px 18px;
+  color: rgba(200, 190, 255, 0.85);
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 2rem;
+  
+}
+
+.heroTaglineIcon {
+  width: 18px;
+  height: 18px;
+  background: rgba(139, 92, 246, 0.6);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  flex-shrink: 0;
 }
 
 .heroTitle {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
-  font-weight: 400;
-  line-height: 1.18;
-  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.09;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 1.25rem;
   color: #fff;
 }
 
+.heroTitleMain {
+  display: block;
+  font-size: 56px;
+  color: #ffffff;
+}
+
+.heroTitleSub {
+  display: block;
+  font-size: 46px;
+  background: linear-gradient(90deg, #818cf8 0%, #a78bfa 40%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .heroSubtitle {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  line-height: 1.75;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: rgba(180, 170, 220, 0.75);
+  line-height: 1.7;
   margin-bottom: 2.5rem;
+  max-width: 460px;
 }
 
 .heroActions {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
+/* Hero image - phones - sits below CTAs, full width */
+.heroImage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 860px;
+  margin: 3rem auto 0;
+  display: block;
+}
+
+.heroImageImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Store badges */
+.heroBadges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.heroBadgeImg { height: 40px; opacity: 0.9; transition: opacity 0.2s; }
+.heroBadgeImg:hover { opacity: 1; }
+
 .heroTrust {
-  color: var(--green);
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.heroTrustDot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(139, 92, 246, 0.4);
+}
+
+/* Orb */
+.orbContainer {
+  width: 110px; height: 110px;
+  margin: 0 auto 2.5rem; position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+.orbRing {
+  position: absolute; inset: -12px; border-radius: 50%;
+  border: 1.5px solid rgba(139,92,246,0.25);
+  animation: pulseRing 5s ease-in-out infinite;
+}
+.orb {
+  width: 110px; height: 110px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%,
+    rgba(210,190,255,0.95) 0%,
+    rgba(139,92,246,0.8) 30%,
+    rgba(100,50,200,0.55) 65%,
+    transparent 85%);
+  box-shadow: 0 0 60px rgba(139,92,246,0.5), 0 0 120px rgba(100,50,200,0.25);
+  animation: breathe 5s ease-in-out infinite;
+}
+.orbSmall {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(210,190,255,0.9), rgba(139,92,246,0.7));
+  box-shadow: 0 0 40px rgba(139,92,246,0.4);
+  margin: 0 auto 2rem;
+  animation: breathe 5s ease-in-out infinite;
 }
 
 .heroSecondaryActions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  display: flex; justify-content: center;
+  gap: 10px; flex-wrap: wrap; margin-bottom: 2rem;
+}
+
+/* Phone mockups (legacy, unused) */
+.heroMockups {
+  position: relative; margin: 2rem auto;
+  max-width: 600px; height: 320px;
+  display: flex; align-items: center; justify-content: center;
+}
+.heroMockupCenter {
+  width: 200px; height: 300px; border-radius: 24px;
+  background: linear-gradient(145deg, rgba(30,30,60,0.9), rgba(22,22,48,0.95));
+  border: 1px solid rgba(139,92,246,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(139,92,246,0.15);
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.heroMockupSide {
+  width: 160px; height: 260px; border-radius: 20px;
+  background: linear-gradient(145deg, rgba(25,25,50,0.8), rgba(18,18,38,0.9));
+  border: 1px solid rgba(139,92,246,0.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  position: absolute; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.heroMockupLeft { left: 40px; transform: perspective(800px) rotateY(8deg) scale(0.9); }
+.heroMockupRight { right: 40px; transform: perspective(800px) rotateY(-8deg) scale(0.9); }
+
+/* Tagline pill */
+.heroTagline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 50px; padding: 8px 20px;
+  color: var(--text-muted); font-size: 0.9rem;
   margin-bottom: 2rem;
 }
+.heroTaglineIcon {
+  font-size: 1rem;
+}
 
-/* ============================================
-   VERA Orb
-   ============================================ */
+.heroTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.09;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.heroTitleMain {
+  display: block;
+  font-size: 56px;
+}
+
+.heroTitleSub {
+  display: block;
+  font-size: 46px;
+}
+.heroSubtitle {
+  font-size: 1.1rem; color: var(--text-muted);
+  line-height: 1.75; margin-bottom: 2.5rem;
+  max-width: 520px; margin-left: auto; margin-right: auto;
+}
+.heroActions {
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 2rem;
+}
+
+/* Phone mockups */
+.heroMockups {
+  position: relative; margin: 2rem auto;
+  max-width: 600px; height: 320px;
+  display: flex; align-items: center; justify-content: center;
+}
+.heroMockupCenter {
+  width: 200px; height: 300px; border-radius: 24px;
+  background: linear-gradient(145deg, rgba(30,30,60,0.9), rgba(22,22,48,0.95));
+  border: 1px solid rgba(139,92,246,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(139,92,246,0.15);
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.heroMockupSide {
+  width: 160px; height: 260px; border-radius: 20px;
+  background: linear-gradient(145deg, rgba(25,25,50,0.8), rgba(18,18,38,0.9));
+  border: 1px solid rgba(139,92,246,0.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  position: absolute; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.heroMockupLeft { left: 40px; transform: perspective(800px) rotateY(8deg) scale(0.9); }
+.heroMockupRight { right: 40px; transform: perspective(800px) rotateY(-8deg) scale(0.9); }
+
+/* Hero mockup image */
+.heroImage {
+  width: 100%;
+  max-width: 680px;
+  margin: 2.5rem auto 0;
+  display: block;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.heroImageImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(139, 92, 246, 0.15);
+}
+
+/* Store badges */
+.heroBadges {
+  display: flex; gap: 12px; justify-content: center;
+  align-items: center; margin-bottom: 1.5rem;
+}
+.heroBadgeImg { height: 40px; opacity: 0.9; transition: opacity 0.2s; }
+.heroBadgeImg:hover { opacity: 1; }
+
+.heroTrust {
+  color: var(--text-dim); font-size: 0.88rem;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+}
+.heroTrustDot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(139,92,246,0.4);
+}
+
+/* Orb */
 .orbContainer {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 2.5rem;
-  position: relative;
+  width: 110px; height: 110px;
+  margin: 0 auto 2.5rem; position: relative;
   animation: float 6s ease-in-out infinite;
 }
-
 .orbRing {
-  position: absolute;
-  inset: -12px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(139, 120, 255, 0.25);
+  position: absolute; inset: -12px; border-radius: 50%;
+  border: 1.5px solid rgba(139,92,246,0.25);
   animation: pulseRing 5s ease-in-out infinite;
 }
-
 .orb {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: 110px; height: 110px; border-radius: 50%;
   background: radial-gradient(circle at 35% 35%,
-    rgba(210, 190, 255, 0.95) 0%,
-    rgba(139, 120, 255, 0.8) 30%,
-    rgba(100, 70, 180, 0.55) 65%,
+    rgba(210,190,255,0.95) 0%,
+    rgba(139,92,246,0.8) 30%,
+    rgba(100,50,200,0.55) 65%,
     transparent 85%);
-  box-shadow: 0 0 60px rgba(139, 120, 255, 0.5), 0 0 120px rgba(100, 70, 180, 0.25);
+  box-shadow: 0 0 60px rgba(139,92,246,0.5), 0 0 120px rgba(100,50,200,0.25);
+  animation: breathe 5s ease-in-out infinite;
+}
+.orbSmall {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(210,190,255,0.9), rgba(139,92,246,0.7));
+  box-shadow: 0 0 40px rgba(139,92,246,0.4);
+  margin: 0 auto 2rem;
   animation: breathe 5s ease-in-out infinite;
 }
 
-.orbSmall {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, rgba(210, 190, 255, 0.9), rgba(139, 120, 255, 0.7));
-  box-shadow: 0 0 40px rgba(139, 120, 255, 0.4);
-  margin: 0 auto 2rem;
-  animation: breathe 5s ease-in-out infinite;
+.heroSecondaryActions {
+  display: flex; justify-content: center;
+  gap: 10px; flex-wrap: wrap; margin-bottom: 2rem;
 }

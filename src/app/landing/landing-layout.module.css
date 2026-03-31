@@ -1,174 +1,112 @@
 /* ============================================
    VERA Landing Page - Layout & Containers
-   Module 2 of 8
+   Redesigned to match Figma
    ============================================ */
 
-/* ============================================
-   Shell Container (Fixed with Overflow)
-   ============================================ */
 .shell {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  overflow-y: auto; overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: var(--landing-bg);
   color: #fff;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
+.content { min-height: 100%; }
 
-.content {
-  min-height: 100%;
-}
-
-/* ============================================
-   Sections
-   ============================================ */
+/* Sections */
 .section {
   padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
 }
-
 .sectionAlt {
   background: var(--landing-bg-alt);
 }
+.sectionCompact { padding: 4rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.containerSm { max-width: 720px; margin: 0 auto; }
+.containerWide { max-width: 1200px; margin: 0 auto; }
 
-.sectionCompact {
-  padding: 4rem 2rem;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.containerSm {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
+/* Section Headers */
 .sectionLabel {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--purple);
-  margin-bottom: 1rem;
-  text-align: center;
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--purple-light); margin-bottom: 1rem; text-align: center;
 }
-
-.sectionLabelGreen {
-  color: var(--green);
-}
-
+.sectionLabelGreen { color: var(--green); }
 .sectionTitle {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
-  font-weight: 400;
-  color: #fff;
-  text-align: center;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400; color: #fff;
+  text-align: center; line-height: 1.2; margin-bottom: 1rem;
 }
-
 .sectionSub {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  text-align: center;
-  line-height: 1.7;
-  margin-bottom: 3rem;
+  font-size: 1.05rem; color: var(--text-muted);
+  text-align: center; line-height: 1.7; margin-bottom: 3rem;
+  max-width: 600px; margin-left: auto; margin-right: auto;
 }
 
-/* ============================================
-   Video Section
-   ============================================ */
+/* Video */
 .videoWrapper {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 2px solid rgba(139, 120, 255, 0.25);
-  box-shadow: 0 8px 40px rgba(139, 120, 255, 0.2);
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(139,92,246,0.15);
 }
+.video { width: 100%; display: block; }
 
-.video {
-  width: 100%;
-  display: block;
-}
-
-/* ============================================
-   Therapists Section
-   ============================================ */
+/* Therapists */
 .therapistSteps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; margin-bottom: 3rem;
 }
-
-.stepLabel {
+.stepNumber {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3);
+  color: var(--purple-light); font-size: 0.85rem; font-weight: 700;
+  margin-bottom: 1rem;
+}
+.stepNumberGreen {
+  background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.3);
   color: var(--green);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  margin-bottom: 0.75rem;
 }
-
-.stepTitle {
-  color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
+.stepLabel {
+  color: var(--green); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.15em; margin-bottom: 0.75rem;
 }
-
-.stepDesc {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
+.stepTitle { color: #fff; font-size: 1.15rem; margin-bottom: 0.6rem; font-weight: 600; }
+.stepDesc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
 
 .skillsBox {
-  background: rgba(26, 26, 46, 0.6);
-  border: 1px solid rgba(74, 222, 128, 0.15);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
-}
-
-.skillsLabel {
-  color: var(--green);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-}
-
-.skillsGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skillPill {
-  padding: 7px 16px;
-  border-radius: 50px;
-  border: 1px solid rgba(139, 120, 255, 0.3);
-  background: rgba(139, 120, 255, 0.08);
-  color: var(--purple);
-  font-size: 0.88rem;
-  font-weight: 500;
-}
-
-.therapistInfo {
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
+  background: rgba(22,22,48,0.7);
+  border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem;
   text-align: center;
 }
-
+.skillsLabel {
+  color: var(--purple-light); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.15em; margin-bottom: 1.25rem; text-transform: uppercase;
+}
+.skillsGrid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.skillPill {
+  padding: 8px 18px; border-radius: 50px;
+  border: 1px solid rgba(139,92,246,0.25);
+  background: rgba(139,92,246,0.08);
+  color: var(--purple-light); font-size: 0.88rem; font-weight: 500;
+}
+.therapistInfo {
+  color: var(--text-muted); margin-bottom: 1.5rem;
+  font-size: 1rem; text-align: center;
+}
 .therapistActions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+
+/* Therapist Step Card Layout */
+.stepCardContent {
+  display: flex; flex-direction: column;
+}
+.stepCardRight {
+  display: flex; flex-direction: column; gap: 0.5rem;
 }
