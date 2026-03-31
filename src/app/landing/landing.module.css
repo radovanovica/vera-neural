@@ -322,38 +322,42 @@
 }
 
 .skillsBox {
-    background: rgba(22, 22, 48, 0.7);
-    border: 1px solid rgba(139, 92, 246, 0.15);
+    background: rgba(14, 12, 35, 0.85);
+    border: 1px solid #9B83FC;
     border-radius: 16px;
-    padding: 2rem;
+    padding: 2rem 2.5rem;
     margin-bottom: 2.5rem;
     text-align: center;
+    backdrop-filter: blur(8px);
 }
 
 .skillsLabel {
-    color: var(--purple-light);
-    font-size: 0.78rem;
+    color: #4ade80;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
-    margin-bottom: 1.25rem;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+    text-transform: none;
 }
 
 .skillsGrid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
 }
 
 .skillPill {
-    padding: 8px 18px;
+    padding: 10px 22px;
     border-radius: 50px;
-    border: 1px solid rgba(139, 92, 246, 0.25);
-    background: rgba(139, 92, 246, 0.08);
-    color: var(--purple-light);
-    font-size: 0.88rem;
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    background: rgba(60, 40, 120, 0.55);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .therapistInfo {
@@ -368,6 +372,86 @@
     gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* ---- Therapist step rows ---- */
+.therapistStepList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.therapistStepRow {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Card style only for content card */
+.therapistStepContentCard {
+    background: rgba(14, 12, 35, 0.85);
+    border: 1px solid rgba(110, 95, 200, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    position: relative;
+    box-shadow: 0 0 40px 0 rgba(132, 121, 242, 0.12);
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.therapistStepContentCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at top left, rgba(200, 180, 255, 1) 0%, rgba(200, 180, 255, 0) 18px) top left / 40px 40px no-repeat,
+        linear-gradient(to right, rgba(200, 180, 255, 0.9) 0%, rgba(200, 180, 255, 0.4) 15%, rgba(200, 180, 255, 0) 28%) top / 100% 2px no-repeat,
+        linear-gradient(to bottom, rgba(200, 180, 255, 0.9) 0%, rgba(200, 180, 255, 0.4) 15%, rgba(200, 180, 255, 0) 28%) left / 2px 100% no-repeat;
+}
+
+.therapistStepNumCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+}
+
+.therapistStepImg {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.therapistStepLabel {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: capitalize;
+    color: #ffffff;
+    display: block;
+}
+
+.therapistStepContentCard {
+    padding: 1.75rem 2rem;
+}
+
+.therapistStepTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
 }
 
 .stepCardContent {
@@ -477,26 +561,28 @@
 }
 
 .pillBtnPrimary {
-    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%);
     color: #fff;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 4px 20px rgba(74, 222, 128, 0.35);
+    border-radius: 50px;
 }
 
 .pillBtnPrimary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.55);
+    box-shadow: 0 8px 32px rgba(74, 222, 128, 0.5);
 }
 
 .pillBtnOutline {
-    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border: 1.5px solid #9B83FC;
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.06);
+    background: transparent;
     font-family: 'Inter', sans-serif;
+    border-radius: 50px;
 }
 
 .pillBtnOutline:hover {
-    border-color: rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.12);
+    border-color: #b8a8ff;
+    background: rgba(155, 131, 252, 0.06);
 }
 
 .pillBtnGreen {
@@ -1151,6 +1237,15 @@
     padding-top: 1rem;
 }
 
+.individualsTryFree {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .individualsStoreRow {
     display: flex;
     justify-content: center;
@@ -1743,6 +1838,70 @@
         grid-template-columns: 1fr;
     }
 
+    /* Therapist step rows — stack vertically on mobile */
+    .therapistStepRow {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .therapistStepNumCard {
+        order: -1;
+        padding: 1rem;
+    }
+
+    .therapistStepImg {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .therapistStepLabel {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .therapistStepContentCard {
+        padding: 1.25rem 1.5rem;
+    }
+
+    /* Individuals title */
+    .individualsTitle {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    /* Individuals store buttons — stack on mobile */
+    .individualsStoreRow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .individualsStoreBtn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    /* Skills box */
+    .skillsBox {
+        padding: 1.5rem;
+    }
+
+    .skillsGrid {
+        gap: 8px;
+    }
+
+    .skillPill {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+    }
+
+    /* Hero CTA buttons — full width on mobile */
+    .heroCtaPrimary,
+    .heroCtaOutline {
+        width: 100%;
+        max-width: 320px;
+    }
+
     .therapistActions {
         flex-direction: column;
         align-items: center;
@@ -1830,6 +1989,37 @@
 
     .therapistSteps {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Therapist step rows — tighter columns on tablet */
+    .therapistStepRow {
+        grid-template-columns: 38% 62%;
+        gap: 1rem;
+    }
+
+    .therapistStepImg {
+        max-width: 240px;
+    }
+
+    .therapistStepLabel {
+        font-size: 30px;
+    }
+
+    /* Individuals title */
+    .individualsTitle {
+        font-size: 44px;
+        line-height: 58px;
+    }
+
+    /* Individuals store buttons — row on tablet */
+    .individualsStoreRow {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Skills box */
+    .skillsBox {
+        padding: 1.75rem 2rem;
     }
 
     .testimonialGrid {

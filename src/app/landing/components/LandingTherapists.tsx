@@ -6,57 +6,41 @@ import { THERAPIST_SKILLS, THERAPIST_STEPS } from '../data/therapists';
 
 export function LandingTherapists(): React.JSX.Element {
   return (
-    <section id="therapists" className={`${styles.section} ${styles.sectionAlt}`} style={{ position: 'relative', overflow: 'hidden' }}>
-      <div
-        className={styles.ambient}
-        style={{ width: 400, height: 400, background: 'rgba(74,222,128,0.04)', top: '10%', right: '-5%' }}
-      />
-      <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>
+    <section id="therapists" className={`${styles.section} ${styles.sectionAlt}`}>
+      <div className={styles.containerWide}>
+        <h2 className={styles.individualsTitle}>
           Your Clinical Presence,<br />
           <span className={styles.gradientText}>Between Every Session</span>
         </h2>
         <p className={styles.sectionSub}>
-          VERA is the first AI a licensed therapist can actually direct.<br className={styles.hideMobile} />
+          VERA is the first AI a licensed therapist can actually direct.<br />
           You assign the clinical focus. VERA holds it — every day, every conversation.
         </p>
 
-        {/* Step Cards — Figma shows alternating layout with step numbers */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginBottom: '3rem' }}>
+        {/* Step Cards — zigzag: even = num left / title right, odd = title left / num right */}
+        <div className={styles.therapistStepList}>
           {THERAPIST_STEPS.map((item, index) => (
             <div
               key={item.step}
-              className={styles.card}
-              style={{
-                display: 'flex',
-                flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
-                alignItems: 'center',
-                gap: '2rem',
-                padding: '2rem 2.5rem',
-              }}
+              className={styles.therapistStepRow}
+              style={{ direction: index % 2 === 0 ? 'rtl' : 'ltr' }}
             >
-              <div style={{ flex: 1 }}>
-                <div className={styles.stepNumber}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>Step</span>
-                </div>
-                <p className={styles.stepDesc}>{item.desc}</p>
+              {/* Step image + label */}
+              <div className={styles.therapistStepNumCard} style={{ direction: 'ltr' }}>
+                <img src={item.stepImg} alt={`Step ${item.step}`} className={styles.therapistStepImg} />
+                <span className={styles.therapistStepLabel}>{item.title}</span>
               </div>
-              <div style={{ flex: 1, textAlign: index % 2 === 0 ? 'right' : 'left' }}>
-                <h3 style={{
-                  fontFamily: "'DM Serif Display', serif",
-                  fontSize: 'clamp(1.3rem, 3vw, 1.8rem)',
-                  color: '#fff',
-                  fontWeight: 400,
-                  lineHeight: 1.3,
-                }}>
-                  {item.title}
-                </h3>
+              {/* Title + desc card */}
+              <div className={styles.therapistStepContentCard} style={{ direction: 'ltr' }}>
+                <h3 className={styles.therapistStepTitle}>{item.title}</h3>
+                <p className={styles.stepDesc}>{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Clinical Skills */}
+        <div className={styles.container}>
         <div className={styles.skillsBox}>
           <p className={styles.skillsLabel}>Clinical Skills You Can Assign</p>
           <div className={styles.skillsGrid}>
@@ -75,6 +59,7 @@ export function LandingTherapists(): React.JSX.Element {
               Learn More →
             </Link>
           </div>
+        </div>
         </div>
       </div>
     </section>

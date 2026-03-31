@@ -8,6 +8,7 @@ export interface HighlightCard {
 
 export interface StepItem {
   step: string;
+  stepImg: string;
   title: string;
   desc: string;
 }

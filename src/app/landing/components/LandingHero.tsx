@@ -48,18 +48,6 @@ export function LandingHero(): React.JSX.Element {
         {/* Phones image stack — hero-img-2 & 3 float above hero-img-1 */}
         <div className={`${styles.heroPhones} ${styles.fadeUp4}`}>
           <img
-            src="/images/hero-img-2.png"
-            alt=""
-            aria-hidden="true"
-            className={styles.heroPhonesOverlay2}
-          />
-          <img
-            src="/images/hero-img-3.png"
-            alt=""
-            aria-hidden="true"
-            className={styles.heroPhonesOverlay3}
-          />
-          <img
             src="/images/hero-img-1.png"
             alt="VERA app on phones"
             className={styles.heroPhonesImg}
