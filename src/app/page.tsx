@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+import { LandingDemoVideo } from './landing/components/LandingDemoVideo';
 import { LandingDivider } from './landing/components/LandingDivider';
 import { LandingFinalCTA } from './landing/components/LandingFinalCTA';
 import { LandingFloatingCTA } from './landing/components/LandingFloatingCTA';
@@ -24,6 +25,7 @@ export default function LandingPage(): React.JSX.Element {
       <LandingTestimonialHero />
       <LandingDivider />
       <LandingIndividuals />
+      <LandingDemoVideo />
       <LandingTherapists />
       <LandingTestimonials />
       <LandingScience />

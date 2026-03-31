@@ -272,6 +272,39 @@
     display: block;
 }
 
+.demoVideoSection {
+    background: var(--landing-bg-alt);
+    text-align: center;
+}
+
+.demoVideoWrap {
+    position: relative;
+    max-width: 860px;
+    margin: 2.5rem auto 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(155, 131, 252, 0.25);
+    box-shadow:
+        0 0 0 1px rgba(155, 131, 252, 0.1),
+        0 8px 60px rgba(100, 70, 220, 0.25);
+}
+
+.demoVideoGlow {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(155, 131, 252, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.demoVideoEmbed {
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+    z-index: 0;
+}
+
 .therapistSteps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
