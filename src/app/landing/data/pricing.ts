@@ -4,10 +4,10 @@ export const PRICING_CARDS: PricingCard[] = [
   {
     title: 'VERA Free Plan',
     price: '$0',
-    period: '/Monthly',
+    period: 'Monthly',
     features: [
-      'Full AI VERA access you can chat with',
-      'Talk to VERA anytime. No credit card required.',
+      'Talk to VERA anytime you need support.',
+      'No credit card required.',
     ],
     cta: 'Start Free',
     href: '/sign-up',
@@ -16,14 +16,15 @@ export const PRICING_CARDS: PricingCard[] = [
   {
     title: 'VERA Premium',
     price: '$12.99',
-    period: '/Monthly',
+    period: 'Monthly',
     features: [
       'Clinical skills',
       'Practice tools',
       'Pattern insights',
       'Progress tracking',
+      'Priority support',
     ],
-    cta: 'Start Free Trial',
+    cta: 'Upgrade To Premium',
     href: '/upgrade',
     variant: 'primary',
     featured: true,

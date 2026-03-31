@@ -6,13 +6,9 @@ import { PRICING_CARDS } from '../data/pricing';
 
 export function LandingPricing(): React.JSX.Element {
   return (
-    <section id="pricing" className={styles.section} style={{ position: 'relative' }}>
-      <div
-        className={styles.ambient}
-        style={{ width: 400, height: 400, background: 'rgba(139,92,246,0.06)', top: '20%', right: '10%' }}
-      />
+    <section id="pricing" className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>
+        <h2 className={styles.individualsTitle}>
           Simple, <span className={styles.gradientText}>Honest Pricing</span>
         </h2>
         <p className={styles.sectionSub}>
@@ -21,26 +17,35 @@ export function LandingPricing(): React.JSX.Element {
 
         <div className={styles.pricingGrid}>
           {PRICING_CARDS.map((card) => (
-            <div key={card.title} className={`${styles.priceCard} ${card.featured ? styles.priceCardFeatured : ''}`}>
+            <div
+              key={card.title}
+              className={`${styles.priceCard} ${card.featured ? styles.priceCardFeatured : ''}`}
+            >
               {card.featured && <div className={styles.priceCardBadge}>Most Popular</div>}
 
-              <h3 className={styles.priceCardTitle} style={{
-                color: card.featured ? 'var(--purple-light)' : '#fff'
-              }}>
+              <h3 className={`${styles.priceCardTitle} ${card.featured ? styles.priceCardTitleFeatured : ''}`}>
                 {card.title}
               </h3>
 
-              <div className={styles.priceCardPrice}>{card.price}</div>
-              <div className={styles.priceCardPeriod}>{card.period}</div>
+              <div className={styles.priceCardPriceRow}>
+                <span className={`${styles.priceCardPrice} ${card.featured ? styles.priceCardPriceFeatured : ''}`}>
+                  {card.price}
+                </span>
+                <span className={`${styles.priceCardPeriod} ${card.featured ? styles.priceCardPeriodFeatured : ''}`}>
+                  {card.period}
+                </span>
+              </div>
 
-              <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginBottom: '1.5rem' }}>
-                {card.featured ? 'Core Features:' : 'Core Features:'}
+              <hr className={`${styles.priceCardDivider} ${card.featured ? styles.priceCardDividerFeatured : ''}`} />
+
+              <p className={`${styles.priceCardFeaturesLabel} ${card.featured ? styles.priceCardFeaturesLabelFeatured : ''}`}>
+                Core Features:
               </p>
 
               <ul className={styles.priceFeatureList}>
                 {card.features.map((feature) => (
-                  <li key={feature} className={styles.priceFeature}>
-                    <span className={styles.priceFeatureCheck}>✓</span>
+                  <li key={feature} className={`${styles.priceFeature} ${card.featured ? styles.priceFeatureFeatured : ''}`}>
+                    <span className={`${styles.priceFeatureCheck} ${card.featured ? styles.priceFeatureCheckFeatured : ''}`}>✓</span>
                     {feature}
                   </li>
                 ))}
@@ -48,18 +53,13 @@ export function LandingPricing(): React.JSX.Element {
 
               <Link
                 href={card.href}
-                className={`${styles.pillBtn} ${card.variant === 'primary' ? styles.pillBtnPrimary : styles.pillBtnOutline}`}
-                style={{ display: 'block', textAlign: 'center', width: '100%' }}
+                className={card.featured ? styles.priceCtaPremium : styles.priceCtaFree}
               >
                 {card.cta}
               </Link>
             </div>
           ))}
         </div>
-
-        <p className={styles.pricingCancel}>
-          Cancel anytime. No questions. No guilt trips.
-        </p>
       </div>
     </section>
   );

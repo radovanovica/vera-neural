@@ -20,12 +20,14 @@ export interface TestimonialItem {
   timeAgo: string;
   rating: number;
   green?: boolean;
+  platform?: 'facebook' | 'instagram' | 'youtube';
 }
 
 export interface ScienceCard {
   title: string;
   desc: string;
   icon: string;
+  image?: string;
 }
 
 export interface PricingCard {

@@ -19,7 +19,7 @@ export function LandingNav(): React.JSX.Element {
         <div className={styles.navActions}>
           <Link
             href="/sign-up"
-            className={`${styles.pillBtn} ${styles.pillBtnPrimary} ${styles.pillBtnSmall}`}
+            className={`${styles.pillBtn} ${styles.navGetStartedBtn} ${styles.pillBtnSmall}`}
           >
             Get Started →
           </Link>
