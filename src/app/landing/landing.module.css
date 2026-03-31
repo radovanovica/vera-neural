@@ -2218,13 +2218,14 @@
 
     /* Phones: smaller container, images scale via % widths */
     .heroPhones {
-        height: 280px;
-        margin-top: 2rem;
+        height: 420px;
+        margin-top: 1.5rem;
         max-width: 100%;
+        overflow: visible;
     }
 
     .heroPhonesImg {
-        width: 55%;
+        width: 115%;
         max-width: none;
     }
 
@@ -2243,9 +2244,11 @@
         height: auto;
         min-height: 160px;
         padding: 32px 20px 24px;
-        margin-top: -20px;
+        margin-top: -14rem;
         border-radius: 40% 40% 0 0 / 60px 60px 0 0;
         border-width: 14px;
+        position: relative;
+        z-index: 10;
     }
 
     .heroStoreBtns {
