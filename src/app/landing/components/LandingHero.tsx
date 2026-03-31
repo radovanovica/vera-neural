@@ -36,10 +36,10 @@ export function LandingHero(): React.JSX.Element {
 
           {/* CTA Buttons */}
           <div className={`${styles.heroActions} ${styles.fadeUp3}`}>
-            <Link href="/sign-up" className={`${styles.pillBtn} ${styles.pillBtnOutline}`}>
+            <Link href="/sign-up" className={styles.heroCtaPrimary}>
               Try it for Free. No Card Needed.
             </Link>
-            <Link href="#therapists" className={`${styles.pillBtn} ${styles.pillBtnDark}`}>
+            <Link href="#therapists" className={styles.heroCtaOutline}>
               For Therapists →
             </Link>
           </div>

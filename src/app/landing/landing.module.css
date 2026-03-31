@@ -20,7 +20,7 @@
     --footer-bg: #08080F;
 
     --text-primary: #FFFFFF;
-    --text-muted: rgba(200, 190, 255, 0.75);
+    --text-muted: E8E8E8;
     --text-dim: rgba(160, 150, 200, 0.6);
 
     --border: rgba(139, 92, 246, 0.2);
@@ -636,7 +636,7 @@
 /* Center image: hero-img-1 */
 .heroPhonesImg {
     position: absolute;
-    top: 10;
+    top: 0;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -645,13 +645,11 @@
     z-index: 3;
 }
 
-/* hero-img-2: left of center, raised */
+/* hero-img-2: left side, raised */
 .heroPhonesOverlay2 {
     position: absolute;
-    bottom: 70%;
-    right: -60;
-
-    /* right: calc(50% + 80px); */
+    bottom: 0;
+    left: calc(50% - 380px);
     width: 28%;
     max-width: 280px;
     height: auto;
@@ -659,12 +657,11 @@
     pointer-events: none;
 }
 
-/* hero-img-3: right of center, raised */
+/* hero-img-3: right side, raised */
 .heroPhonesOverlay3 {
     position: absolute;
-    left: -60;
-    bottom: 70%;
-    /* left: calc(50% + 80px); */
+    bottom: 0;
+    right: calc(50% - 380px);
     width: 28%;
     max-width: 280px;
     height: auto;
@@ -734,7 +731,7 @@
 .heroSubtitle {
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
-    color: rgba(180, 170, 220, 0.75);
+    color: #E8E8E8;
     line-height: 1.7;
     margin-bottom: 2.5rem;
     max-width: 460px;
@@ -746,6 +743,60 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 0;
+}
+
+/* Hero CTA — primary gradient button */
+.heroCtaPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 325px;
+    height: 60px;
+    border-radius: 100px;
+    padding: 16px 32px;
+    background: linear-gradient(180deg, #9B83FC 0%, #5B44B1 100%);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.heroCtaPrimary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Hero CTA — outline button with gradient border */
+.heroCtaOutline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 325px;
+    height: 60px;
+    border-radius: 100px;
+    padding: 16px 32px;
+    background: transparent;
+    border: 2px solid #9B83FC;
+    color: #9B83FC;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.heroCtaOutline:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
 }
 
 /* ---- Store badges row — card that overlaps the bottom of the phones ---- */
@@ -1018,6 +1069,129 @@
     padding-top: 0.5rem;
     border-top: 1px solid rgba(139, 92, 246, 0.1);
     margin-top: 0.75rem;
+}
+
+/* ---- Individuals section ---- */
+.individualsTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 74px;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.individualsCard {
+    background: rgba(14, 12, 35, 0.85);
+    border: 1px solid rgba(110, 95, 200, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    backdrop-filter: blur(8px);
+    position: relative;
+    box-shadow: 0 0 40px 0 rgba(132, 121, 242, 0.12);
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.individualsCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at top left, rgba(200, 180, 255, 1) 0%, rgba(200, 180, 255, 0) 18px) top left / 40px 40px no-repeat,
+        linear-gradient(to right, rgba(200, 180, 255, 0.9) 0%, rgba(200, 180, 255, 0.4) 15%, rgba(200, 180, 255, 0) 28%) top / 100% 2px no-repeat,
+        linear-gradient(to bottom, rgba(200, 180, 255, 0.9) 0%, rgba(200, 180, 255, 0.4) 15%, rgba(200, 180, 255, 0) 28%) left / 2px 100% no-repeat;
+}
+
+.individualsCard:hover {
+    border-color: rgba(155, 131, 252, 0.35);
+    transform: translateY(-3px);
+}
+
+.individualsCardTop {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.individualsCardIcon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: rgba(155, 131, 252, 0.12);
+    border: 1px solid rgba(155, 131, 252, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.individualsCardTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+}
+
+.individualsCardResponse {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.individualsStoreRow {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.individualsStoreBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: #0d0b1a;
+    border: 1.5px solid rgba(155, 131, 252, 0.3);
+    border-radius: 14px;
+    text-decoration: none;
+    color: #fff;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.individualsStoreBtn:hover {
+    border-color: rgba(155, 131, 252, 0.6);
+    transform: translateY(-2px);
+}
+
+.individualsStoreBtnText {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.individualsStoreBtnSub {
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+}
+
+.individualsStoreBtnMain {
+    font-size: 1.15rem;
+    font-weight: 600;
 }
 
 /* Pricing */
@@ -1467,44 +1641,98 @@
     }
 
     .hero {
-        padding: 6rem 1.5rem 0;
+        padding: 5rem 1rem 0;
+        min-height: auto;
     }
 
     .heroInner {
-        padding-bottom: 320px;
+        padding-bottom: 2rem;
+    }
+
+    .heroContent {
+        max-width: 100%;
+        padding: 0 0.5rem;
     }
 
     .heroTitle {
-        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+    }
+
+    .heroTitleMain {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .heroTitleSub {
+        font-size: clamp(1.4rem, 7vw, 2.2rem);
     }
 
     .heroSubtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        max-width: 320px;
     }
 
     .heroActions {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+
+    /* Phones: smaller container, images scale via % widths */
+    .heroPhones {
+        height: 280px;
+        margin-top: 2rem;
+        max-width: 100%;
     }
 
     .heroPhonesImg {
-        width: 46%;
-    }
-
-    .heroPhones {
-        height: 300px;
+        width: 55%;
+        max-width: none;
     }
 
     .heroPhonesOverlay2 {
-        width: 36%;
-        right: calc(50% + 40px);
-        bottom: 8%;
+        width: 26%;
+        left: 2%;
     }
 
     .heroPhonesOverlay3 {
-        width: 36%;
-        left: calc(50% + 40px);
-        bottom: 8%;
+        width: 26%;
+        right: 2%;
+    }
+
+    /* Store row */
+    .heroStoreRow {
+        height: auto;
+        min-height: 160px;
+        padding: 32px 20px 24px;
+        margin-top: -20px;
+        border-radius: 40% 40% 0 0 / 60px 60px 0 0;
+        border-width: 14px;
+    }
+
+    .heroStoreBtns {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .heroStoreBtn {
+        min-width: 200px;
+        width: 100%;
+        max-width: 260px;
+    }
+
+    /* Testimonial section */
+    .testimonialHeroLayout {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .testimonialHeroBgSvg {
+        display: none;
+    }
+
+    .testimonialHeroCard {
+        width: 100%;
     }
 
     .cardGrid {
@@ -1562,6 +1790,40 @@
         max-width: 90%;
     }
 
+    .heroPhones {
+        height: 380px;
+        max-width: 90%;
+    }
+
+    .heroPhonesImg {
+        width: 58%;
+    }
+
+    .heroPhonesOverlay2 {
+        width: 25%;
+        left: 3%;
+    }
+
+    .heroPhonesOverlay3 {
+        width: 25%;
+        right: 3%;
+    }
+
+    .heroStoreRow {
+        height: auto;
+        min-height: 200px;
+        padding: 40px 32px 28px;
+    }
+
+    .testimonialHeroLayout {
+        padding-left: 200px;
+    }
+
+    .testimonialHeroBgSvg {
+        width: 380px;
+        left: 0;
+    }
+
     .cardGrid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1590,5 +1852,46 @@
 
     .therapistSteps {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Lock hero phones to desktop layout */
+    .heroPhones {
+        height: 480px;
+        max-width: 1000px;
+    }
+
+    .heroPhonesImg {
+        width: auto;
+        max-width: 1000px;
+    }
+
+    .heroPhonesOverlay2 {
+        width: 28%;
+        left: calc(50% - 380px);
+        bottom: 0;
+    }
+
+    .heroPhonesOverlay3 {
+        width: 28%;
+        right: calc(50% - 380px);
+        bottom: 0;
+    }
+
+    /* Lock store row to desktop size */
+    .heroStoreRow {
+        height: 300px;
+        padding: 52px 40px 28px;
+        border-radius: 50% 50% 0 0 / 120px 120px 0 0;
+        border-width: 22.54px;
+    }
+
+    /* Testimonial layout: full side-by-side */
+    .testimonialHeroBgSvg {
+        display: block;
+        width: 669px;
+    }
+
+    .testimonialHeroLayout {
+        padding-left: 360px;
     }
 }

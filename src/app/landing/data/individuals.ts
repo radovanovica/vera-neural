@@ -2,21 +2,24 @@ import type { HighlightCard } from '../types';
 
 export const INDIVIDUALS_CARDS: HighlightCard[] = [
   {
-    color: '#ef4444',
+    color: '#9B83FC',
+    icon: '⚙️',
     title: 'Anxiety Attacks',
-    desc: 'Racing thoughts, chest tight, fear of losing control',
-    response: 'VERA recognizes early acceleration and responds before panic forms',
+    desc: 'Racing thoughts, tight chest, fear of losing control',
+    response: 'VERA recognizes early acceleration and helps you slow the spiral before it spikes',
   },
   {
-    color: '#ef4444',
+    color: '#9B83FC',
+    icon: '⚠️',
     title: 'Panic Attacks',
     desc: "Can't breathe, heart pounding, feels like dying",
-    response: 'VERA detects overload and avoids amplifying it — meeting you where you are',
+    response: 'VERA meets you at your level and reduces overwhelm without forcing anything',
   },
   {
-    color: '#60a5fa',
+    color: '#9B83FC',
+    icon: '🚫',
     title: 'Dissociation',
-    desc: 'Floating, numb, disconnected from body',
-    response: 'VERA tracks withdrawal patterns and restores orientation gently',
+    desc: 'Floating, numb, disconnected from body, hard to think or feel',
+    response: 'VERA tracks withdrawal patterns and restores orientation gently, at your pace',
   },
 ];

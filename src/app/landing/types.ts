@@ -1,5 +1,6 @@
 export interface HighlightCard {
   color: string;
+  icon: string;
   title: string;
   desc: string;
   response: string;
