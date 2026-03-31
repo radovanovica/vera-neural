@@ -1712,8 +1712,14 @@
 /* ============ TESTIMONIALS v2 — horizontal scroll rows ============ */
 
 .testimonialSection {
-    overflow: hidden;
+    overflow: visible;
     position: relative;
+    background: linear-gradient(180deg,
+        var(--landing-bg-alt) 0%,
+        #0d0d20 30%,
+        #0d0d20 70%,
+        var(--landing-bg-alt) 100%
+    );
 }
 
 /* Wrapper for each row — clips overflow and hosts the fade overlays */
@@ -1730,10 +1736,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 140px;
+    width: 65%;
     height: 100%;
-    background: linear-gradient(to right, #0B0B1A 0%, transparent 100%);
-    z-index: 2;
+    background: linear-gradient(to right, var(--landing-bg-alt) 0%, transparent 100%);
+    z-index: 4;
     pointer-events: none;
 }
 
@@ -1743,10 +1749,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 140px;
+    width: 65%;
     height: 100%;
-    background: linear-gradient(to left, #0B0B1A 0%, transparent 100%);
-    z-index: 2;
+    background: linear-gradient(to left, var(--landing-bg-alt) 0%, transparent 100%);
+    z-index: 4;
     pointer-events: none;
 }
 
@@ -2359,8 +2365,17 @@
     }
 
     /* Testimonials v2 — horizontal scroll on mobile */
+    .testimonialSection {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    .testimonialRowWrap {
+        padding: 0.5rem 0;
+    }
+
     .testimonialScrollInner {
-        gap: 1rem;
+        gap: 0.75rem;
         transform: translateX(-3%);
     }
 
@@ -2369,9 +2384,15 @@
     }
 
     .testimonialCard2 {
-        width: 290px;
-        min-width: 290px;
-        padding: 1.25rem;
+        width: 240px;
+        min-width: 240px;
+        padding: 1rem;
+        gap: 0.6rem;
+    }
+
+    .tc2Text {
+        font-size: 0.82rem;
+        line-height: 1.5;
     }
 
     .pricingGrid {
